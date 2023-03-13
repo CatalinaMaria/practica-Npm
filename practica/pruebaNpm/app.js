@@ -4,10 +4,12 @@ console.log(movieQuotes.getRandomQuote());
 const listaAutos = require('./db/index');
 console.log(listaAutos);
 
-function describirse() {
-   return 'hola soy el auto ' + listaAutos.marca + ' , modelo ' + listaAutos.modelo + ' . Fabricado en el año ' + listaAutos.anio + ' y del color ' + listaAutos.color
+function describirse(numero) {
+   return `hola soy el auto ${listaAutos[numero].Marca},  modelo ${listaAutos[numero].modelo} . Fabricado en el año  ${listaAutos[numero].anio} y del color ${listaAutos[numero].color}`
 }
 console.log(describirse(1));
+console.log(describirse(7));
+
 
 for (let i = 0; i < listaAutos.length; i++){
     console.log(describirse(i))
@@ -16,7 +18,7 @@ for (let i = 0; i < listaAutos.length; i++){
 function porColor(color){
     let resultados = []
     for (let i = 0; i < listaAutos.length; i++){
-        if (autos.lista[i].color == color){
+        if (listaAutos[i].color == color){
             resultados.push(describirse(i))
         }
     }
